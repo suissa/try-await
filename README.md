@@ -7,13 +7,14 @@ Article explaining how I did this in pt-br: https://medium.com/@osuissa/javascri
 ## Example
 
 ```js
+
 const axios = require('axios')
-const tryAwait = require('try-await')
+const tryAwait = require('./index')
 
-const URL = 'https://reqres.in/api/users/2'
+const URL = 'https://reqres.in/api/users/'
 
-const cbTry = (res) => console.log('Response: ', res.data)
-const cbCatch = (err) => console.log('ERROOOR: ', err)
+const cbTry = (res) => console.log('Sucesso: ', res.data)
+const cbCatch = (err) => console.log('ERROOO: ', err)
 
 const callback = ({
   try: cbTry
@@ -22,6 +23,6 @@ const callback = ({
 
 const getUser = (user) => axios({ method: 'get', url: URL + user })
 
-tryAwait( axios({ method: 'get', url: URL }), callback )
+tryAwait( getUser(2), callback )
 
 ```

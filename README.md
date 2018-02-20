@@ -9,7 +9,7 @@ Article explaining how I did this in pt-br: https://medium.com/@osuissa/javascri
 ```js
 
 const axios = require('axios')
-const tryAwait = require('./index')
+const tryAwait = require('try-await')
 
 const URL = 'https://reqres.in/api/users/'
 
